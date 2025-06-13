@@ -1,0 +1,97 @@
+/* Prose styling for lesson content */
+.prose {
+  max-width: none;
+}
+
+.prose h3 {
+  @apply text-2xl font-bold text-white mt-8 mb-4;
+}
+
+.prose h4 {
+  @apply text-xl font-semibold text-blue-300 mt-6 mb-3;
+}
+
+.prose h5 {
+  @apply text-lg font-semibold text-emerald-300 mt-4 mb-2;
+}
+
+.prose p {
+  @apply text-gray-300 mb-4 leading-relaxed;
+}
+
+.prose ul {
+  @apply space-y-2 mb-4;
+}
+
+.prose ol {
+  @apply space-y-2 mb-4;
+}
+
+.prose li {
+  @apply text-gray-300;
+}
+
+.prose strong {
+  @apply text-white font-semibold;
+}
+
+.prose table {
+  @apply w-full border-collapse border border-slate-600 mt-4 mb-4;
+}
+
+.prose th,
+.prose td {
+  @apply border border-slate-600 px-4 py-2 text-gray-300;
+}
+
+.prose th {
+  @apply bg-slate-800 font-semibold text-white;
+}
+
+.prose tr:nth-child(even) {
+  @apply bg-slate-800/30;
+}
+
+/* Custom bullet points for lists */
+.prose ul li {
+  @apply relative pl-6;
+}
+
+.prose ul li::before {
+  content: "•";
+  @apply absolute left-0 text-blue-400 font-bold;
+}
+
+.prose ol {
+  counter-reset: item;
+}
+
+.prose ol li {
+  @apply relative pl-8;
+  counter-increment: item;
+}
+
+.prose ol li::before {
+  content: counter(item) ".";
+  @apply absolute left-0 text-blue-400 font-bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .prose h3 {
+    @apply text-xl;
+  }
+  
+  .prose h4 {
+    @apply text-lg;
+  }
+  
+  .prose table {
+    @apply text-sm;
+  }
+  
+  .prose th,
+  .prose td {
+    @apply px-2 py-1;
+  }
+}
