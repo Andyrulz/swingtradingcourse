@@ -661,12 +661,13 @@ function App() {
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            transition={{ duration: 0.3 }}
           >
             <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 flex justify-between items-center">
               <h3 className="text-white font-semibold">Trading Assistant</h3>
               <button
                 onClick={() => setChatOpen(false)}
-                className="text-white hover:text-gray-200"
+                className="text-white hover:text-gray-200 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -675,6 +676,12 @@ function App() {
             <div className="p-4 h-64 overflow-y-auto bg-slate-900">
               <div className="bg-blue-600 text-white p-3 rounded-lg mb-4 max-w-xs">
                 Hi! I'm here to help answer any questions about the SwingMaster Pro course. What would you like to know?
+              </div>
+              <div className="bg-slate-700 text-gray-300 p-3 rounded-lg mb-4 max-w-xs ml-auto">
+                What's included in the course?
+              </div>
+              <div className="bg-blue-600 text-white p-3 rounded-lg mb-4 max-w-xs">
+                Great question! The course includes 6 comprehensive modules covering Mark Minervini's SEPA strategy, Stan Weinstein's Stage Analysis, and Dan Zanger's pattern recognition techniques. You'll get lifetime access, live market analysis, and downloadable resources.
               </div>
             </div>
             
@@ -685,7 +692,7 @@ function App() {
                   placeholder="Ask me anything..."
                   className="flex-1 bg-slate-700 text-white px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-                <button className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700">
+                <button className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
