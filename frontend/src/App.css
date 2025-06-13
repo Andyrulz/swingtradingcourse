@@ -1,38 +1,177 @@
-.App {
-    text-align: center;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+::-webkit-scrollbar-track {
+  background: #1e293b;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
 }
 
-.App-link {
-    color: #61dafb;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Custom gradient animations */
+@keyframes gradient-x {
+  0%, 100% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes gradient-y {
+  0%, 100% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes gradient-xy {
+  0%, 100% {
+    transform: translate(0%, 0%);
+  }
+  25% {
+    transform: translate(-100%, 0%);
+  }
+  50% {
+    transform: translate(-100%, -100%);
+  }
+  75% {
+    transform: translate(0%, -100%);
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
+}
+
+.animate-gradient-y {
+  animation: gradient-y 15s ease infinite;
+}
+
+.animate-gradient-xy {
+  animation: gradient-xy 15s ease infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effects */
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Text gradient effects */
+.text-gradient {
+  background: linear-gradient(45deg, #3b82f6, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply border-2 border-blue-400 text-blue-400 font-semibold py-3 px-6 rounded-lg hover:bg-blue-400 hover:text-white transition-all duration-300 transform hover:scale-105;
+}
+
+/* Loading animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive design helpers */
+@screen sm {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@screen md {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@screen lg {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@screen xl {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@screen 2xl {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+/* Custom focus styles */
+.focus-ring:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-900;
+}
+
+/* Scroll animations */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Custom shadows */
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.shadow-glow-lg {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+}
+
+/* Typography enhancements */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Custom borders */
+.border-gradient {
+  border: 1px solid;
+  border-image: linear-gradient(45deg, #3b82f6, #10b981) 1;
 }
